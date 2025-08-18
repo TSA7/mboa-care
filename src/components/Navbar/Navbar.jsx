@@ -31,12 +31,13 @@ function Navbar({setNavHeight}) {
           <button onClick={()=>{setOpened(!opened);}} className=' pr-3 '>{opened? <CloseIcon/>: <DehazeIcon/>}</button>
         </div>
       </div>
-      {opened &&  <div onClick={()=> setOpened(false)} className=' flex w-full absolute top-20 lg:hidden h-screen border overflow-hidden' style={{backgroundColor:'rgba(0, 0, 0, 0.10)'}}>
-        <div className=' bg-white w-full flex flex-col divide-y divide-gray-300'>
-          {opened && links.map((item, index) => (
-            <button key={index} className={`${index === activeLink ? 'text-green-500 font-semibold':''} cursor-pointer text-lg px-2`} onClick={(e)=>{ e.stopPropagation(); setActiveLink(index); setOpened(false)}}><p>{item}</p></button>
-          ))}
-        </div>
+      {opened &&  
+        <div onClick={()=> setOpened(false)} className=' flex w-full absolute z-20 top-20 lg:hidden h-screen  overflow-hidden' style={{backgroundColor:'rgba(0, 0, 0, 0.10)'}}>
+          <div  className=' bg-white h-32 border border-gray-300 w-full flex flex-col divide-y divide-gray-300'>
+            {opened && links.map((item, index) => (
+              <button key={index} className={`${index === activeLink ? 'text-green-500 font-semibold':''} cursor-pointer text-lg px-2`} onClick={(e)=>{ e.stopPropagation(); setActiveLink(index); setOpened(false)}}><p>{item}</p></button>
+            ))}
+          </div>
       </div>}
     </div>
   )

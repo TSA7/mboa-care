@@ -8,7 +8,7 @@ function App() {
     <>
       <Navbar setNavHeight={setNavHeight}/>
       <Home navHeight={navHeight}/>
-      {/* <Footer/> */}
+      <Footer/>
     </>
   )
 }
