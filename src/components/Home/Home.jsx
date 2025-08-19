@@ -34,7 +34,7 @@ function Home({navHeight}) {
             </div>
         </div>
       </div>
-      <button className=' fixed z-20 bottom-4 right-4  bg-black rounded-full p-3' style={{backgroundColor:'rgba(246, 170, 28, 1)'}}><PhoneIcon sx={{color:'white'}}/></button>
+      <button className=' fixed z-20 bottom-4 right-4  bg-black rounded-full p-3' style={{backgroundColor:'rgba(246, 170, 28, 1)'}}><a href="tel:+237 658182157"><PhoneIcon sx={{color:'white'}}/></a></button>
     </div>
   )
 }
