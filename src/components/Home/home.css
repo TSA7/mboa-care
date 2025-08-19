@@ -3,46 +3,41 @@
 }
 
 .bubleAnimation1{
-    animation: buble1 10s infinite;
+    animation: buble1 30s infinite;
 }
 @keyframes buble1 {
     0% { transform: translate(300px, 0); }
-    25% { transform: translate(100px, 500px); }
-    50% { transform: translate(200px, 100px); }
-    75% { transform: translate(300px, 150px); }
-    100% { transform: translate(400px, 200px); }
+    25% { transform: translate(200px, 150px); }
+    50% { transform: translate(300px, 100px); }
+    75% { transform: translate(350px, 70px); }
+    100% { transform: translate(300px, 0px); }
 }
 
 .bubleAnimation2{
-    animation: buble2 20s infinite;
+    animation: buble2 30s infinite;
 }
 @keyframes buble2 {
-    0% { transform: translate(500px, 200px); }
-    25% { transform: translate(100px, 50px); }
-    50% { transform: translate(200px, 30px); }
-    75% { transform: translate(420px, 150px); }
-    100% { transform: translate(200px, 300px); }
+    0% { transform: translate(0px, 300px); }
+    25% { transform: translate(150px, 200px); }
+    50% { transform: translate(100px, 300px); }
+    75% { transform: translate(70px, 350px); }
+    100% { transform: translate(0px, 300px); }
 }
 
 .bubleAnimation3{
-    animation: buble3 20s infinite;
+    animation: buble3 30s infinite;
 }
 @keyframes buble3 {
-    0% { transform: translate(50px, 300px); }
-    25% { transform: translate(100px, 50px); }
-    50% { transform: translate(200px, 100px); }
-    75% { transform: translate(500px, 40px); }
-    100% { transform: translate(400px, 200px); }
+    0% { transform: translate(350px, 500px); }
+    25% { transform: translate(300px, 400px); }
+    50% { transform: translate(30px, 600px); }
+    75% { transform: translate(50px, 400px); }
+    100% { transform: translate(400px, 500px); }
 }
 
-.bubleAnimation4{
-    animation: buble4 20s infinite;
+.textshadow{
+    text-shadow: 0px 2px white;
+    text-align: justify;
 }
-@keyframes buble4 {
-    0% { transform: translate(120px, 400px); }
-    25% { transform: translate(100px, 450px); }
-    50% { transform: translate(300px, 30px); }
-    75% { transform: translate(100px, 150px); }
-    100% { transform: translate(40px, 400px); }
-}
+
 

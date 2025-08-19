@@ -18,12 +18,12 @@ function Navbar({setNavHeight}) {
 
   return (
     <div className='relative' ref={navHeight}>
-      <div className=' w-full flex justify-between shadow-bottom relative bottom-2'>
+      <div className=' w-full flex justify-between shadow-bottom p-0 relative bottom-2'>
         <div className=' w-full'>
           <img src='logo.png' className=' pl-1 lg:pl-10' width={160} height={160}/>
         </div>
         <div className=' w-full justify-evenly gap-5 items-center hidden lg:flex'>
-          {links.map((item, index) => (<button key={index} className={`${index === activeLink ? 'text-green-500 font-semibold':''} cursor-pointer text-lg`} onClick={()=>setActiveLink(index)}>{item}</button>))}
+          {links.map((item, index) => (<button key={index} style={{color:index === activeLink? 'rgba(0, 145, 79, 1)':''}} className={`${index === activeLink ? ' font-semibold':''} cursor-pointer text-lg`} onClick={()=>setActiveLink(index)}>{item}</button>))}
           <BookConsultation/>
         </div>
         <div className=' flex items-center lg:hidden w-full justify-end gap-2'>
@@ -35,7 +35,7 @@ function Navbar({setNavHeight}) {
         <div onClick={()=> setOpened(false)} className=' flex w-full absolute z-20 top-20 lg:hidden h-screen  overflow-hidden' style={{backgroundColor:'rgba(0, 0, 0, 0.10)'}}>
           <div  className=' bg-white h-32 border border-gray-300 w-full flex flex-col divide-y divide-gray-300'>
             {opened && links.map((item, index) => (
-              <button key={index} className={`${index === activeLink ? 'text-green-500 font-semibold':''} cursor-pointer text-lg px-2`} onClick={(e)=>{ e.stopPropagation(); setActiveLink(index); setOpened(false)}}><p>{item}</p></button>
+              <button key={index} style={{color:index === activeLink? 'rgba(0, 145, 79, 1)':''}} className={`${index === activeLink ? ' font-semibold':''} cursor-pointer text-lg px-2`} onClick={(e)=>{ e.stopPropagation(); setActiveLink(index); setOpened(false)}}><p>{item}</p></button>
             ))}
           </div>
       </div>}
