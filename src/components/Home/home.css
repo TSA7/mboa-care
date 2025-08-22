@@ -82,4 +82,15 @@
     }
 }
 
+@media (max-width: 3024px) {
+    .heightbody2{
+        height: calc(100vh - 80px); /* 64px is the navbar height */
+    }
+}
+@media (max-width: 640px) {
+    .heightbody2{
+        height: 100%
+    }
+}
+
 

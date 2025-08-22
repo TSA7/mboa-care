@@ -8,14 +8,14 @@ import Reference from './Reference';
 function About() {
   const imgheight = useRef()
   return (
-    <div className=' relative bottom-45 lg:bottom-0 heightbody' style={{backgroundColor:'white'}}>
+    <div className=' relative bottom-45 lg:bottom-0 heightbody2' style={{backgroundColor:'white'}}>
       <Buble color='white' heigh='28px' width='28px' className={'bubleAnimation1'}/>
       <Buble color='rgba(251, 118, 32, 0.25)' heigh='35px' width='35px' className={'bubleAnimation2'}/>
       <Buble color='rgba(3, 112, 62, 0.26)' heigh='40px' width='40px' className={'bubleAnimation3'}/>
       <Buble color='white' heigh='28px' width='28px' className={'bubleAnimation4'}/>
       <Buble color='rgba(251, 118, 32, 0.25)' heigh='35px' width='35px' className={'bubleAnimation5'}/>
       <Buble color='rgba(3, 112, 62, 0.26)' heigh='40px' width='40px' className={'bubleAnimation6'}/>
-      <div className=' w-full   flex justify-center relative bottom-50  lg:bottom-20'>
+      <div className=' w-full   flex justify-center relative bottom-50  lg:bottom-30'>
         <div className='  w-9/10 lg:w-3/4 '>
           <h1 style={{color:'rgba(232, 93, 4, 1)', fontWeight:'bold'}} className=' text-[36px] lg:text-[80px]'>About</h1>
           <div  className=' w-full  flex items-center lg:hidden'>
