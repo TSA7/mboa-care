@@ -1,9 +1,45 @@
-import React from 'react'
-
+import React, { useRef } from 'react'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
+import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
+import Buble from '../Home/Buble'
+import '../Home/home.css'
+import Reference from './Reference';
 function About() {
+  const imgheight = useRef()
   return (
-    <div style={{height:'100vh', backgroundColor:'white'}}>
-      
+    <div className=' relative bottom-45 lg:bottom-0 heightbody' style={{backgroundColor:'white'}}>
+      <Buble color='white' heigh='28px' width='28px' className={'bubleAnimation1'}/>
+      <Buble color='rgba(251, 118, 32, 0.25)' heigh='35px' width='35px' className={'bubleAnimation2'}/>
+      <Buble color='rgba(3, 112, 62, 0.26)' heigh='40px' width='40px' className={'bubleAnimation3'}/>
+      <Buble color='white' heigh='28px' width='28px' className={'bubleAnimation4'}/>
+      <Buble color='rgba(251, 118, 32, 0.25)' heigh='35px' width='35px' className={'bubleAnimation5'}/>
+      <Buble color='rgba(3, 112, 62, 0.26)' heigh='40px' width='40px' className={'bubleAnimation6'}/>
+      <div className=' w-full   flex justify-center relative bottom-50  lg:bottom-20'>
+        <div className='  w-9/10 lg:w-3/4 '>
+          <h1 style={{color:'rgba(232, 93, 4, 1)', fontWeight:'bold'}} className=' text-[36px] lg:text-[80px]'>About</h1>
+          <div  className=' w-full  flex items-center lg:hidden'>
+              <img  src='about.png'/>
+          </div>
+          <div className='flex justify-between'>
+            <div  className=' w-full  hidden lg:flex items-center'>
+              <img style={{height:`300px`}} src='about.png'/>
+            </div>
+            <div className=' w-full  p-2'>
+              <div ref={imgheight}>
+                <p className=' text-justify'>I am Nurse Name, a certified healthcare professional with over 8 years of experience in providing quality medical care. Based in Yaoundé, I am passionate about delivering personalized healthcare services that prioritize your comfort and well-being.</p>
+                <p className='my-5 text-justify'>My approach combines clinical expertise with genuine compassion, ensuring that every patient receives not just medical care, but also emotional support and understanding during their healing journey.</p>
+                <p className=' text-justify'>I am passionate about delivering personalized healthcare services that prioritize your comfort and well-being.</p>
+                <div className='flex flex-col lg:flex-row justify-between gap-2.5 lg:gap-0 mt-5'>
+                  <Reference color='rgba(232, 93, 4, 1)' icon={<FavoriteBorderIcon sx={{color:'white'}}/>} text={'Compassionate Care'}/>
+                  <Reference color='rgba(239, 35, 60, 1)' icon={<HealthAndSafetyIcon sx={{color:'white'}}/>} text={'Patient Safety'}/>
+                  <Reference color='rgba(0, 145, 79, 1)' icon={<MedicalServicesIcon sx={{color:'white'}}/>} text={'Quality Services'}/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

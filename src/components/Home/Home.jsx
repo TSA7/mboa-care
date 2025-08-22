@@ -8,19 +8,14 @@ function Home({navHeight}) {
     const leftheight = useRef(0)
     const imgheight = leftheight.current?.clientHeight
   return (
-    <div style={{backgroundColor:'rgba(214, 231, 223, 1)', height:`calc(100vh - ${navHeight}px)`}}  className=' relative bottom-1'>
-      <div className=' w-7 h-7 bg-white rounded-full  bubleAnimation1'></div>
+    <div style={{backgroundColor:'rgba(214, 231, 223, 1)',}}  className=' relative bottom-1 heightbody'>
+      <Buble color='white' heigh='28px' width='28px' className={'bubleAnimation1'}/>
       <Buble color='rgba(251, 118, 32, 0.25)' heigh='35px' width='35px' className={'bubleAnimation2'}/>
       <Buble color='rgba(3, 112, 62, 0.26)' heigh='40px' width='40px' className={'bubleAnimation3'}/>
-      <Buble color='rgba(239, 35, 60, 0.22)' heigh='22px' width='22px' className={'d'} style={{ border:`1px solid black`, transform:`translate(300px 200px)`}}/>
-      <Buble color='rgba(251, 118, 32, 0.25)' heigh='32px' width='32px' className={'bubleAnimation'}/>
-      <Buble color='rgba(239, 35, 60, 0.25)' heigh='35px' width='35px' className={'bubleAnimation'}/>
-      <Buble color='rgba(3, 112, 62, 0.26)' heigh='40px' width='40px' className={'bubleAnimation'}/>
-      <Buble color='rgba(251, 118, 32, 0.25)' heigh='35px' width='35px' className={'bubleAnimation'}/>
-      <Buble color='rgba(3, 112, 62, 0.26)' heigh='40px' width='40px' className={'bubleAnimation'}/>
-      <Buble color='rgba(251, 118, 32, 0.25)' heigh='35px' width='35px' className={'bubleAnimation'}/>
-      <Buble color='rgba(3, 112, 62, 0.26)' heigh='40px' width='40px' class name={'bubleAnimation'} style={{transform:`translate(20px 40px)`}}/>
-      <div className=' w-full   flex justify-center relative bottom-25  lg:bottom-0'>
+      <Buble color='white' heigh='28px' width='28px' className={'bubleAnimation4'}/>
+      <Buble color='rgba(251, 118, 32, 0.25)' heigh='35px' width='35px' className={'bubleAnimation5'}/>
+      <Buble color='rgba(3, 112, 62, 0.26)' heigh='40px' width='40px' className={'bubleAnimation6'}/>
+      <div className=' w-full   flex justify-center relative bottom-50  lg:bottom-20'>
         <div className='  w-9/10 lg:w-3/4 flex justify-between items-center'>
             <div>
                 <img className=' block lg:hidden' style={{height:`100vh -${navHeight}px - ${imgheight}px`}} src='home.png'/>
