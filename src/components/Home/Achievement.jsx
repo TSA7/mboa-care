@@ -12,8 +12,8 @@ function Achievement({color, number, unit, subtitle}) {
     }, [dynamicNumber])
   return (
     <div style={{color:color}} className=' bg-white rounded-lg w-full'>
-        <p className=' text-center text-[30px] lg:text-[40px] font-bold'>{dynamicNumber} {unit}</p>
-        <p className=' text-center text-[16px] lg:text-[20px]'>{subtitle}</p>
+        <h2 className=' text-center text-[30px] lg:text-[40px] font-bold'>{dynamicNumber} {unit}</h2>
+        <h3 className=' text-center text-[16px] lg:text-[20px]'>{subtitle}</h3>
     </div>
   )
 }

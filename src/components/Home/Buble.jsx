@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Buble({color, heigh, width, className}) {
+function Buble({color, heigh, width, className, style={}}) {
   return (
-<div className={`w-8 h-8 bg-white rounded-full ${className}`} style={{backgroundColor:color, height:heigh, width}}></div>
+<div className={`w-8 h-8 bg-white rounded-full ${className}`} style={{...style, backgroundColor:color, height:heigh, width}}></div>
   )
 }
 
