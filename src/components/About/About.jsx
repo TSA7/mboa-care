@@ -8,7 +8,7 @@ import Reference from './Reference';
 function About() {
   const imgheight = useRef()
   return (
-    <div className=' relative bottom-45 lg:bottom-0 heightbody2' style={{backgroundColor:'white'}}>
+    <div className=' relative bottom-45 lg:bottom-0 ' style={{backgroundColor:'white'}}>
       <Buble color='white' heigh='28px' width='28px' className={'bubleAnimation1'}/>
       <Buble color='rgba(251, 118, 32, 0.25)' heigh='35px' width='35px' className={'bubleAnimation2'}/>
       <Buble color='rgba(3, 112, 62, 0.26)' heigh='40px' width='40px' className={'bubleAnimation3'}/>
@@ -23,7 +23,7 @@ function About() {
           </div>
           <div className='flex justify-between'>
             <div  className=' w-full  hidden lg:flex items-center'>
-              <img style={{height:`300px`}} src='about.png'/>
+              <img style={{height:`320px`}} src='about.png'/>
             </div>
             <div className=' w-full  p-2'>
               <div ref={imgheight}>

@@ -11,7 +11,7 @@ function Services() {
       <div className=' flex justify-center'>
         <div>
             <p ref={barwidth} className=' font-semibold, text-[50px] lg:text-[80px] ' style={{color:'rgba(2, 80, 44, 1)'}}>Services</p>
-            <div className=' h-2 lg:h-3 relative bottom-3 lg:bottom-4' style={{backgroundColor:'rgba(2, 80, 44, 1)', width:`${widthValue/2}px`}}></div>
+            <div className=' h-2 lg:h-2 relative bottom-3 lg:bottom-4' style={{backgroundColor:'rgba(2, 80, 44, 1)', width:`${widthValue/2}px`}}></div>
         </div>
       </div>
       <div className=' w-full flex justify-center'>

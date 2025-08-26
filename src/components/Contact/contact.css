@@ -1,0 +1,12 @@
+.backgroundContact {
+  background-image: linear-gradient(to right,rgba(219, 250, 233, 1) 40%, rgba(220, 231, 255, 1) 100%);
+}
+.locationBackground{
+    background-image: linear-gradient(to right, rgba(1, 138, 76, 1), rgba(3, 112, 62, 1));
+}
+.clockBackground{
+    background-image: linear-gradient(to right, rgba(0, 145, 79, 1), rgba(3, 112, 62, 1));
+}
+.phoneBackground{
+    background-image: linear-gradient(to right, rgba(0, 145, 79, 1), rgba(3, 112, 62, 1));
+}
