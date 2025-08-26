@@ -73,7 +73,7 @@
 }
 @media (max-width: 3024px) {
     .heightbody{
-        height: calc(100vh - 80px); /* 64px is the navbar height */
+        height: 100vh
     }
 }
 @media (max-width: 640px) {

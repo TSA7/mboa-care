@@ -17,8 +17,8 @@ function Navbar({setNavHeight}) {
   },[])
 
   return (
-    <div className='relative' ref={navHeight}>
-      <div className=' w-full flex justify-between shadow-bottom p-0 relative bottom-2'>
+    <div className=' fixed top-0 z-40 w-screen bg-white' ref={navHeight}>
+      <div className=' w-full flex justify-between shadow-bottom p-0'>
         <div className=' w-full'>
           <img src='logo.png' className=' pl-1 lg:pl-10' width={160} height={160}/>
         </div>

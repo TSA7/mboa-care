@@ -7,7 +7,7 @@ function Services() {
   const barwidth = useRef()
     const widthValue = barwidth.current?.clientWidth
   return (
-    <div style={{backgroundColor:'rgba(214, 231, 223, 1)'}} className='heightbody2 relative bottom-72 lg:bottom-0'>
+    <div style={{backgroundColor:'rgba(214, 231, 223, 1)'}} className='heightbody2 relative bottom-20 lg:bottom-0'>
       <div className=' flex justify-center'>
         <div>
             <p ref={barwidth} className=' font-semibold, text-[50px] lg:text-[80px] ' style={{color:'rgba(2, 80, 44, 1)'}}>Services</p>

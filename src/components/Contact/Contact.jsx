@@ -27,10 +27,10 @@ function Contact() {
           </div>
         </div>
         <div className=' w-full flex justify-center'>
-          <p className=' w-4/5 lg:w-3/7 text-[20px] lg:text-[30px] text-center font-semibold' style={{color:'rgba(2, 80, 44, 1)'}} >One step closer to better healthcare with MBOA Care Centre</p>
+          <p className=' w-4/5 lg:w-3/7 text-[20px] lg:text-[30px] text-center font-semibold py-6' style={{color:'rgba(2, 80, 44, 1)'}} >One step closer to better healthcare with MBOA Care Centre</p>
         </div>
         <div className=' flex justify-center'>
-            <div  className=' flex justify-between flex-col lg:flex-row  items-center p-3 backgroundContact gap-10' style={{borderRadius:'20px'}}>
+            <div  className=' flex justify-between flex-col lg:flex-row  items-center p-3 backgroundContact gap-10 mt-6 lg:mt-0' style={{borderRadius:'20px'}}>
               <img ref={heightlenght} src='contact.png'/>
               <div className=' flex flex-col gap-3'>
                 <Localisation icon={<LocationOnIcon/>} classname={'locationBackground'} title={'Carrefour Mecque, Yaounde, Cameroon '}/>
