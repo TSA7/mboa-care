@@ -9,13 +9,16 @@
 @keyframes shake {
   0% {
       box-shadow: 0px 0px 0px rgba(232, 93, 4, 0.97);
+      padding: 8px 4px;
 
    }
   50% {
-      box-shadow: 2px 4px 10px rgba(232, 93, 4, 0.97);
+      box-shadow: 2px 4px 16px rgba(232, 93, 4, 0.97);
+      padding: 11px 7px;
     }
   100% {
       box-shadow: 0px 0px 0px rgba(232, 93, 4, 0.97);
+      padding: 8px 4px;
 
     }
 }
