@@ -1,2 +1,17 @@
 .shadow-bottom {
   box-shadow: 0px 1px 10px  rgba(0,0,0,0.4)}
+
+.shakebutton {
+  animation: shake 1s infinite;
+    box-shadow: 0px 1px 10px rgba(232, 93, 4, 0.97);
+
+}
+
+@keyframes shake {
+  0% { transform: translate(0px, 0px); background-color: red; }
+  50% { transform: translate(1px, -5px); background-color: white; }
+  100% { transform: translate(0px, 0px); background-color: green; }
+}
+
+.boxshadow {
+}
