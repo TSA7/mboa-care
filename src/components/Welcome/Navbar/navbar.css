@@ -2,7 +2,7 @@
   box-shadow: 0px 1px 10px  rgba(0,0,0,0.4)}
 
 .shakebutton {
-  animation: shake 1s infinite;
+  animation: shake 2s infinite;
 
 }
 
@@ -13,7 +13,7 @@
 
    }
   50% {
-      box-shadow: 2px 4px 16px rgba(232, 93, 4, 0.97);
+      box-shadow: 2px 4px 20px rgba(232, 93, 4, 0.97);
       padding: 11px 7px;
     }
   100% {

@@ -19,7 +19,7 @@ function Contact() {
       <Buble color='white' heigh='28px' width='28px' className={'bubleAnimation4'}/>
       <Buble color='rgba(251, 118, 32, 0.25)' heigh='35px' width='35px' className={'bubleAnimation5'}/>
       <Buble color='rgba(3, 112, 62, 0.26)' heigh='40px' width='40px' className={'bubleAnimation6'}/>
-      <div className=' relative bottom-50 lg:bottom-20'>
+      <div className=' relative bottom-50 lg:bottom-30'>
         <div className=' w-full flex justify-center'>
           <div>
             <p className=' text-[50px] lg:text-[80px] font-semibold' style={{color:'rgba(2, 80, 44, 1)'}} ref={wordlenght}>Contact</p>
