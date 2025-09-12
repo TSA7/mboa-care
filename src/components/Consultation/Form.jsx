@@ -4,7 +4,7 @@ import PersonalDetail from './PersonalDetail'
 import ConsultationDetail from './ConsultationDetail'
 
 function Form() {
-    const [currParam, setCurrParam] = useState(1)
+    const [currParam, setCurrParam] = useState(2)
     const currentTitle = ['Personal Info', 'Consultation Details', 'Additional info']
     const ad = new Date()
     const cb = currParam > 1
@@ -16,7 +16,8 @@ function Form() {
         consultationType:'',
         preferredDate: ad.toISOString().split('T')[0],
         preferredTimeSlot:'',
-        additionalNotes:''
+        additionalNotes:'',
+        file:[]
     })  
     const validUserInfo = !userInfo.firstName || !userInfo.lastName || !userInfo.phoneNumber || !userInfo.mailAddress
     // const validConsultationDetail = 
@@ -38,7 +39,7 @@ function Form() {
     }
 
   return (
-    <div style={{height:`100vh`, backgroundColor:'rgba(214, 231, 223, 1)'}} className='w-full h-screen flex justify-center items-center'>
+    <div style={{height:`100vh`, backgroundColor:'rgba(214, 231, 223, 1)'}} className='w-full h-screen flex justify-center items-end'>
       <div className=' bg-white rounded-xl py-3 px-8 w-9/10 lg:w-1/2'>
         <h1 style={{color:'rgba(2, 80, 44, 1)', textAlign:'center'}} className='text-[32px] lg:text-[38px]'>Schedule Consultation</h1>
         <div className=' flex flex-row justify-between mt-5 mb-4'>
