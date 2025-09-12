@@ -1,23 +1,42 @@
 import React, {useState} from 'react'
 import Params from './Params'
+import PersonalDetail from './PersonalDetail'
+import ConsultationDetail from './ConsultationDetail'
 
 function Form() {
     const [currParam, setCurrParam] = useState(1)
     const currentTitle = ['Personal Info', 'Consultation Details', 'Additional info']
+    const ad = new Date()
+    const cb = currParam > 1
     const [userInfo, setUserInfo] = useState({
         firstName:'',
         lastName:'',
         phoneNumber:'',
-        mailAddress:''
+        mailAddress:'',
+        consultationType:'',
+        preferredDate: ad.toISOString().split('T')[0],
+        preferredTimeSlot:'',
+        additionalNotes:''
     })  
-    const validUserInfo = userInfo.firstName && userInfo.lastName && userInfo.phoneNumber && userInfo.mailAddress
+    const validUserInfo = !userInfo.firstName || !userInfo.lastName || !userInfo.phoneNumber || !userInfo.mailAddress
+    // const validConsultationDetail = 
     function handleSubmit(e){
         e.preventDefault()
+        console.log('done')
+        if(currParam === 1 ){
+            setCurrParam(prev => prev + 1)
+            console.log('done')
+        }
+        else if(currParam === 2){
+            setCurrParam(3)
+        }  
     }
-    function handleNext(){  
-        if(currParam >3) return;
-        setCurrParam(currParam + 1)
-     }
+
+    const handleBack = () => {
+        if(currParam === 1) return;
+        setCurrParam(currParam - 1)
+    }
+
   return (
     <div style={{height:`100vh`, backgroundColor:'rgba(214, 231, 223, 1)'}} className='w-full h-screen flex justify-center items-center'>
       <div className=' bg-white rounded-xl py-3 px-8 w-9/10 lg:w-1/2'>
@@ -28,26 +47,16 @@ function Form() {
             <Params active={3 === currParam} number={3} title={'Additional info'}/>
         </div>
         <p className='text-[27px] my-2 ' style={{color:'rgba(2, 80, 44, 1)'}}>{currentTitle[currParam-1]}</p>
-        {currParam === 1 &&
-        <form onSubmit={handleSubmit} className=' grid grid-cols-1 lg:grid-cols-2 gap-4'>
-            <div>
-                <p>First Name</p>
-                <input value={userInfo.firstName} onChange={e => setUserInfo({...userInfo, firstName:e.target.value})} className=' outline-green-700 w-full py-2 rounded-lg px-1' style={{border:`1px solid rgba(0, 0, 0, 0.25)`, backgroundColor:'rgba(0, 0, 0, 0.07)'}} />
+        <form onSubmit={handleSubmit}>
+            <div className=' grid grid-cols-1 lg:grid-cols-2 gap-4'>
+                {currParam === 1 && <PersonalDetail handleSubmit={handleSubmit} userInfo={userInfo} setUserInfo={setUserInfo}/>}
+                {currParam === 2 && <ConsultationDetail handleSubmit={handleSubmit} userInfo={userInfo} setUserInfo={setUserInfo}/>}
             </div>
-            <div>
-                <p>Last Name</p>
-                <input value={userInfo.lastName} onChange={e => setUserInfo({...userInfo, lastName:e.target.value})} className=' w-full py-2 rounded-lg px-1 outline-green-700' style={{border:`1px solid rgba(0, 0, 0, 0.25)`, backgroundColor:'rgba(0, 0, 0, 0.07)'}}/>
+            <div className=' flex justify-between'>
+                <button onClick={()=> handleBack()} type='button' style={{backgroundColor:cb?'rgba(0, 0, 0, 0.25)':'white', color:cb?'black':'white'}} className='py-1 px-3 mt-3 rounded-lg cursor-pointer'>Back</button>
+                <button disabled={validUserInfo} type='submit' style={{backgroundColor:!validUserInfo? 'rgba(2, 80, 44, 1)':'rgba(2, 80, 44, 0.56)', cursor:!validUserInfo?'pointer':'not-allowed'}} className=' float-right py-1 px-3 text-white mt-3 rounded-lg'>Next</button>
             </div>
-            <div>
-                <p>Phone Number</p>
-                <input value={userInfo.phoneNumber} onChange={e => setUserInfo({...userInfo, phoneNumber:e.target.value})} className=' w-full py-2 rounded-lg px-1 outline-green-700' style={{border:`1px solid rgba(0, 0, 0, 0.25)`, backgroundColor:'rgba(0, 0, 0, 0.07)'}}/>
-            </div>
-            <div>
-                <p>Mail Address</p>
-                <input value={userInfo.mailAddress} onChange={e => setUserInfo({...userInfo, mailAddress:e.target.value})} className=' w-full py-2 rounded-lg px-1 outline-green-700' style={{border:`1px solid rgba(0, 0, 0, 0.25)`, backgroundColor:'rgba(0, 0, 0, 0.07)'}}/>
-            </div>
-        </form>}
-        <button disabled={!validUserInfo} onClick={handleNext} style={{backgroundColor:validUserInfo? 'rgba(2, 80, 44, 1)':'rgba(2, 80, 44, 0.56)', cursor:validUserInfo?'pointer':'not-allowed'}} className=' float-right py-1 px-3 text-white mt-3 rounded-lg'>Next</button>
+        </form>
       </div>
     </div>
   )

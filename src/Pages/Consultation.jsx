@@ -5,7 +5,7 @@ import Form from '../components/Consultation/Form'
 function Consultation() {
   return (
     <>
-      <Navbar/>
+      <Navbar setNavHeight={()=>{}}/>
       <Form/>
     </>
   )
