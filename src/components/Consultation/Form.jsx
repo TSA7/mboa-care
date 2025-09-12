@@ -5,7 +5,7 @@ import ConsultationDetail from './ConsultationDetail'
 import Bubles from '../Welcome/Home/Bubles'
 
 function Form() {
-    const [currParam, setCurrParam] = useState(2)
+    const [currParam, setCurrParam] = useState(1)
     const currentTitle = ['Personal Info', 'Consultation Details', 'Additional info']
     const ad = new Date()
     const cb = currParam > 1
@@ -43,7 +43,7 @@ function Form() {
     <div style={{height:`100vh`, backgroundColor:'rgba(214, 231, 223, 1)'}} className='w-full h-screen overflow-y-scroll flex justify-center lg:items-center items-end'>
       <div className='  w-9/10 lg:w-1/2'>
         <Bubles/>
-        <div className=' bg-white rounded-xl py-3 px-8'>
+        <div className=' bg-white rounded-xl py-3 px-8 relative bottom-17'>
             <h1 style={{color:'rgba(2, 80, 44, 1)', textAlign:'center'}} className='text-[32px] lg:text-[38px]'>Schedule Consultation</h1>
             <div className=' flex flex-row justify-between mt-5 mb-4'>
                 <Params active={1 === currParam} number={1} title={'Personal Info'}/>
