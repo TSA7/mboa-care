@@ -2,19 +2,13 @@ import React, { useRef } from 'react'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
 import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
-import Buble from '../Home/Buble'
-import '../Home/home.css'
 import Reference from './Reference';
+import Bubles from '../Home/Bubles';
 function About() {
   const imgheight = useRef()
   return (
     <div className=' relative bottom-40 lg:bottom-0 z-20' style={{backgroundColor:'white'}}>
-      <Buble color='white' heigh='28px' width='28px' className={'bubleAnimation1'}/>
-      <Buble color='rgba(251, 118, 32, 0.25)' heigh='35px' width='35px' className={'bubleAnimation2'}/>
-      <Buble color='rgba(3, 112, 62, 0.26)' heigh='40px' width='40px' className={'bubleAnimation3'}/>
-      <Buble color='white' heigh='28px' width='28px' className={'bubleAnimation4'}/>
-      <Buble color='rgba(251, 118, 32, 0.25)' heigh='35px' width='35px' className={'bubleAnimation5'}/>
-      <Buble color='rgba(3, 112, 62, 0.26)' heigh='40px' width='40px' className={'bubleAnimation6'}/>
+      <Bubles/>
       <div className=' w-full   flex justify-center relative bottom-0  lg:bottom-30'>
         <div className='  w-9/10 lg:w-3/4 '>
           <h1 style={{color:'rgba(232, 93, 4, 1)'}} className=' font-semibold text-[45px] lg:text-[70px] mb-4'>About</h1>

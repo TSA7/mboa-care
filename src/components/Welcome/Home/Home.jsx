@@ -1,20 +1,14 @@
 import React, { useRef } from 'react'
-import './home.css'
-import Buble from './Buble'
 import Achievement from './Achievement'
 import PhoneIcon from '@mui/icons-material/Phone';
+import Bubles from './Bubles';
 
 function Home({navHeight}) {
     const leftheight = useRef(0)
     const imgheight = leftheight.current?.clientHeight
   return (
     <div style={{backgroundColor:'rgba(214, 231, 223, 1)',}}  className=' relative  heightbody z-30'>
-      <Buble color='white' heigh='28px' width='28px' className={'bubleAnimation1'}/>
-      <Buble color='rgba(251, 118, 32, 0.25)' heigh='35px' width='35px' className={'bubleAnimation2'}/>
-      <Buble color='rgba(3, 112, 62, 0.26)' heigh='40px' width='40px' className={'bubleAnimation3'}/>
-      <Buble color='white' heigh='28px' width='28px' className={'bubleAnimation4'}/>
-      <Buble color='rgba(251, 118, 32, 0.25)' heigh='35px' width='35px' className={'bubleAnimation5'}/>
-      <Buble color='rgba(3, 112, 62, 0.26)' heigh='40px' width='40px' className={'bubleAnimation6'}/>
+      <Bubles/>
       <div className=' w-full   flex justify-center relative bottom-20  lg:bottom-0'>
         <div className='  w-9/10 lg:w-3/4 flex justify-between items-center'>
             <div>
