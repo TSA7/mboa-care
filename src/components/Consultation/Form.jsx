@@ -39,7 +39,7 @@ function Form() {
     }
 
   return (
-    <div style={{height:`100vh`, backgroundColor:'rgba(214, 231, 223, 1)'}} className='w-full h-screen flex justify-center items-end'>
+    <div style={{height:`100vh`, backgroundColor:'rgba(214, 231, 223, 1)'}} className='w-full h-screen flex justify-center lg:items-center items-end'>
       <div className=' bg-white rounded-xl py-3 px-8 w-9/10 lg:w-1/2'>
         <h1 style={{color:'rgba(2, 80, 44, 1)', textAlign:'center'}} className='text-[32px] lg:text-[38px]'>Schedule Consultation</h1>
         <div className=' flex flex-row justify-between mt-5 mb-4'>
