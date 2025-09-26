@@ -20,19 +20,19 @@ function Welcome() {
         const sh = serviceRef.current?.clientHeight
         const ch = contactRef.current?.clientHeight
         if(homeRef.current && aboutRef.current && serviceRef.current && contactRef.current){
-          if(window.innerHeight + window.scrollY < hh){
+          if(window.innerHeight + window.scrollY <= hh){
             console.log("Home")
             setAl("Home")
           }
-          else if(window.innerHeight + window.scrollY < hh + ah){
+          else if(window.innerHeight + window.scrollY <= hh + ah){
             console.log("About")
             setAl("About")
           }
-          else if(window.innerHeight + window.scrollY < hh + ah + sh){
+          else if(window.innerHeight + window.scrollY <= hh + ah + sh){
             console.log("Services")
             setAl("Services")
           }
-          else if(window.innerHeight + window.scrollY < hh + ah + sh + ch){
+          else if(window.innerHeight + window.scrollY <= hh + ah + sh + ch){
             console.log("Contact")
             setAl("Contact")
           }
@@ -45,6 +45,7 @@ function Welcome() {
     setAl(ni)
     console.log(ni)
     if(ni === "Home"){
+       setAl(ni)
     if (homeRef.current) {
       window.scrollTo({
         top: homeRef.current.offsetTop,

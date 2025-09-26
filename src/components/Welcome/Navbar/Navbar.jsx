@@ -42,7 +42,7 @@ function Navbar({setNavHeight, al, handleScrollToSection}) {
         <div onClick={()=> setOpened(false)} className=' flex w-full absolute z-20 top-20 lg:hidden h-screen  overflow-hidden' style={{backgroundColor:'rgba(0, 0, 0, 0.10)'}}>
           <div  className=' bg-white h-32 border border-gray-300 w-full flex flex-col divide-y divide-gray-300'>
             {opened && links.map((item, index) => (
-              <button key={index} style={{color:al === item? 'rgba(0, 145, 79, 1)':''}} className={`${al === item ? ' font-semibold':''} cursor-pointer text-lg px-2`} onClick={(e)=>{ handleScrollToSection(item); e.stopPropagation(); setOpened(false)}}><p>{item}</p></button>
+              <button key={index} style={{color:al === item? 'rgba(0, 145, 79, 1)':''}} className={`${al === item ? ' font-semibold':''} cursor-pointer text-lg px-2`} onClick={(e)=>{e.stopPropagation(); handleScrollToSection(item); setOpened(false)}}><p>{item}</p></button>
             ))}
           </div>
       </div>}
