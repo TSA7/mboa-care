@@ -1,13 +1,18 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import Achievement from './Achievement'
 import PhoneIcon from '@mui/icons-material/Phone';
 import Bubles from './Bubles';
 
-function Home({navHeight}) {
+function Home({navHeight, homeRef}) {
     const leftheight = useRef(0)
-    const imgheight = leftheight.current?.clientHeight
+    const [imgheight, setImgheight] = useState(0)
+    useEffect(() => {
+        if(leftheight.current){
+          setImgheight(leftheight.current.clientHeight)
+        }
+    }, [imgheight])
   return (
-    <div style={{backgroundColor:'rgba(214, 231, 223, 1)',}}  className=' relative  heightbody z-30'>
+    <div ref={homeRef} id='#home' style={{backgroundColor:'rgba(214, 231, 223, 1)',}}  className=' relative  heightbody z-30'>
       <Bubles/>
       <div className=' w-full   flex justify-center relative bottom-20  lg:bottom-0'>
         <div className='  w-9/10 lg:w-3/4 flex justify-between items-center'>

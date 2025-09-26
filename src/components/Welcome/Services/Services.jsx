@@ -2,11 +2,11 @@ import React, { useRef } from 'react'
 import Service from './Service'
 import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
 
-function Services() {
+function Services({serviceRef}) {
   const barwidth = useRef()
     const widthValue = barwidth.current?.clientWidth
   return (
-    <div style={{backgroundColor:'rgba(214, 231, 223, 1)'}} className='heightbody2 relative bottom-20 lg:bottom-0'>
+    <div ref={serviceRef} style={{backgroundColor:'rgba(214, 231, 223, 1)'}} className='heightbody2 relative bottom-20 lg:bottom-0'>
       <div className=' flex justify-center'>
         <div>
             <p ref={barwidth} className=' font-semibold text-[50px] lg:text-[80px] ' style={{color:'rgba(2, 80, 44, 1)'}}>Services</p>

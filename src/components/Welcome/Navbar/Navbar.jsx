@@ -3,27 +3,34 @@ import DehazeIcon from '@mui/icons-material/Dehaze';
 import './navbar.css'
 import BookConsultation from './BookConsultation';
 import CloseIcon from '@mui/icons-material/Close';
+import { Link } from 'react-router-dom';
 
-function Navbar({setNavHeight}) {
-  const [activeLink, setActiveLink] = useState(0);
+function Navbar({setNavHeight, al, handleScrollToSection}) {
   const links = ['Home', 'About', 'Services', 'Contact'];
+  const [y, setY] = useState(window.scrollY);
+
   const [opened, setOpened] = useState(false);
   const navHeight = useRef(0)
+  console.log(`${al} kkkkkkk`)
   useEffect(() => {
-    setTimeout(() => {
-      setNavHeight(navHeight.current.clientHeight);
-
-    }, 500);
-  },[])
-
+    function handleScroll(){
+      const cy = window.scrollY;
+      setY(cy);
+    }
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    }
+  },[y])
+    
   return (
     <div className=' fixed top-0 z-40 w-screen bg-white' ref={navHeight}>
       <div className=' w-full flex justify-between shadow-bottom p-0'>
         <div className=' w-full'>
-          <img src='logo.png' className=' pl-1 lg:pl-10' width={160} height={160}/>
+          <Link to={'/'}><img src='logo.png' className=' pl-1 lg:pl-10' width={160} height={160}/></Link>
         </div>
         <div className=' w-full justify-evenly gap-5 items-center hidden lg:flex'>
-          {links.map((item, index) => (<button key={index} style={{color:index === activeLink? 'rgba(0, 145, 79, 1)':''}} className={`${index === activeLink ? ' font-semibold':''} cursor-pointer text-lg`} onClick={()=>setActiveLink(index)}>{item}</button>))}
+          {links.map((item, index) => (<button key={index} style={{color:al === item? 'rgba(0, 145, 79, 1)':''}} className={`${al === item  ? ' font-semibold':''} cursor-pointer text-lg`} onClick={()=> handleScrollToSection(item)}>{item}</button>))}
           <BookConsultation/>
         </div>
         <div className=' flex items-center lg:hidden w-full justify-end gap-2'>
@@ -35,7 +42,7 @@ function Navbar({setNavHeight}) {
         <div onClick={()=> setOpened(false)} className=' flex w-full absolute z-20 top-20 lg:hidden h-screen  overflow-hidden' style={{backgroundColor:'rgba(0, 0, 0, 0.10)'}}>
           <div  className=' bg-white h-32 border border-gray-300 w-full flex flex-col divide-y divide-gray-300'>
             {opened && links.map((item, index) => (
-              <button key={index} style={{color:index === activeLink? 'rgba(0, 145, 79, 1)':''}} className={`${index === activeLink ? ' font-semibold':''} cursor-pointer text-lg px-2`} onClick={(e)=>{ e.stopPropagation(); setActiveLink(index); setOpened(false)}}><p>{item}</p></button>
+              <button key={index} style={{color:al === item? 'rgba(0, 145, 79, 1)':''}} className={`${al === item ? ' font-semibold':''} cursor-pointer text-lg px-2`} onClick={(e)=>{ handleScrollToSection(item); e.stopPropagation(); setOpened(false)}}><p>{item}</p></button>
             ))}
           </div>
       </div>}

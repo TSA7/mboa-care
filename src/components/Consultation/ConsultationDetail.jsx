@@ -1,14 +1,12 @@
 import React from 'react'
-import AttachFileIcon from '@mui/icons-material/AttachFile';
-import FileUpload from './FileUpload';
+import './consultation.css'
 
-function ConsultationDetail({userInfo, setUserInfo}) {
-    const [focus, setFocus] = React.useState(false);
-    console.log(userInfo.file)
+function ConsultationDetail({userInfo, setUserInfo, timeString}) {
+    const percentage = Math.floor((userInfo.preferredTimeSlot/900)*100)
   return (
     <>
         <div className='col-span-1 lg:col-span-2'>
-            <p>Consultation Type</p>
+            <p className=' font-semibold'>Consultation Type</p>
             <select value={userInfo.consultationType} onChange={e => setUserInfo({...userInfo, consultationType:e.target.value})} className=' outline-green-700 w-full py-2 rounded-lg px-1' style={{border:`1px solid rgba(0, 0, 0, 0.25)`, backgroundColor:'rgba(0, 0, 0, 0.07)'}}>
                 <option value=''>Select Consultation Type</option>
                 <option value='General_Checkup'>General Medical Consultation</option>
@@ -18,26 +16,21 @@ function ConsultationDetail({userInfo, setUserInfo}) {
             </select>
         </div>
         <div className=''>
-            <p>Preferred Date</p>
+            <p className=' font-semibold'>Preferred Date<sup style={{color:'rgba(188, 57, 8, 1)', fontSize:16}}>*</sup></p>
             <input type='date'  value={userInfo.preferredDate} onChange={e => setUserInfo({...userInfo, preferredDate:e.target.value})} className=' w-full py-2 rounded-lg px-1 outline-green-700' style={{border:`1px solid rgba(0, 0, 0, 0.25)`, backgroundColor:'rgba(0, 0, 0, 0.07)'}}/>
         </div>
-        <div className=''>
-            <p>Preferred Time Slot</p>
-            <input value={userInfo.preferredTimeSlot} onChange={e => setUserInfo({...userInfo, phoneNumber:e.target.value})} className=' w-full py-2 rounded-lg px-1 outline-green-700' style={{border:`1px solid rgba(0, 0, 0, 0.25)`, backgroundColor:'rgba(0, 0, 0, 0.07)'}}/>
-        </div>
-        <div className='col-span-1 lg:col-span-2'>
-            <p>Additional Notes</p>
-            <div onClick={()=> setFocus(true)} onPointerLeave={()=> setFocus(false)}  className='rounded-lg px-1' style={{border:`1px solid`, borderColor:focus? 'oklch(52.7% 0.154 150.069)':'rgba(0, 0, 0, 0.25)', backgroundColor:'rgba(0, 0, 0, 0.07)', resize:'none'}}>
-                <textarea onBlur={() => setFocus(false)}   value={userInfo.additionalNotes} onChange={e => setUserInfo({...userInfo, additionalNotes:e.target.value})} className=' w-full py-2 outline-none' style={{resize:'none'}} rows={2}></textarea>
-                <FileUpload userInfo={userInfo} setUserInfo={setUserInfo}/>
-            </div>
-        </div>
-        <div >
-            {userInfo.file && userInfo.file.map((f, i) => (
-                <div key={i} className=' flex items-center' style={{gap:'5px'}}>
-                    <img src={URL.createObjectURL(f)}/>
+        <div className=' flex flex-col'>
+            <p className=' font-semibold grow-0'>Preferred Time Slot<sup style={{color:'rgba(188, 57, 8, 1)', fontSize:16}}>*</sup></p>
+            <div className='grow flex items-center '>
+                <div  className=" w-full">
+                    <div className='flex justify-between'>
+                        <p>7:00 AM</p>
+                        <p>{timeString}</p>
+                        <p>10:00 PM</p>
+                    </div>
+                    <input style={{background:`linear-gradient(to right, #007A5E ${percentage}% , gray ${0}%)`}} type='range' min={0} max={900} value={userInfo.preferredTimeSlot} onChange={ (e) => setUserInfo({...userInfo, preferredTimeSlot:e.target.value})}  className=' w-full slider'/>
                 </div>
-            ))}
+            </div>
         </div>
     </>
   )

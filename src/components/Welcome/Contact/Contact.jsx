@@ -5,13 +5,13 @@ import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Bubles from '../Home/Bubles.jsx'
 
-function Contact() {
+function Contact({contactRef}) {
   const wordlenght = useRef()
   const lenghtvalue = wordlenght.current?.clientWidth
   const heightlenght = useRef()
 
   return (
-    <div className='bg-white ' >
+    <div ref={contactRef} className='bg-white ' >
       <Bubles/>
       <div className=' relative bottom-50 lg:bottom-30'>
         <div className=' w-full flex justify-center'>

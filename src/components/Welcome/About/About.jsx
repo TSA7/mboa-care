@@ -1,13 +1,13 @@
-import React, { useRef } from 'react'
+import React, {useRef } from 'react'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
 import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
 import Reference from './Reference';
 import Bubles from '../Home/Bubles';
-function About() {
-  const imgheight = useRef()
+function About({aboutRef}) {
+  const imgheight = useRef(undefined)
   return (
-    <div className=' relative bottom-40 lg:bottom-0 z-20' style={{backgroundColor:'white'}}>
+    <div ref={aboutRef} className=' relative bottom-40 lg:bottom-0 z-20' style={{backgroundColor:'white'}}>
       <Bubles/>
       <div className=' w-full   flex justify-center relative bottom-0  lg:bottom-30'>
         <div className='  w-9/10 lg:w-3/4 '>
